@@ -45,7 +45,7 @@ void parse_verbose_arg(const cstr arg, cstr *argv, uint idx, uint argc) {
     help();
   }
   else if (strcmp(arg, "verbose") == 0) {
-    verbose = false;
+    verbose = true;
   }
   else if (strcmp(arg, "port") == 0) {
         if (argc > idx+1) {
@@ -101,6 +101,7 @@ int main(int argc, cstr *argv) {
   }
   if (!verbose) clog_mute_level(CLOG_WARNING);
 
+  clog(CLOG_TRACE, "Preparing to initialize server");
   printf("Starting server with:\n");
   printf("  Port: %u\n", port);
   return 0;
