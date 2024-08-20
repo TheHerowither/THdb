@@ -92,7 +92,7 @@ void parse_dash(const cstr arg, cstr *argv, uint idx, uint argc) {
 
 int main(int argc, cstr *argv) {
   //const cstr program_name = argv[0];
-  clog_fmt = "%c%L:%r %m";
+  clog_fmt = "%L: %m";
   for (uint i = 1; i < (uint)argc; i++) {
     const char *arg = argv[i];
     if (arg[0] == '-') {
